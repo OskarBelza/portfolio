@@ -33,10 +33,10 @@ function App() {
     );
 }
 
-function Home(){
+function Home() {
     return (
         <main>
-            <Hero/>
+            <Hero />
             <div className="about-container">
                 <div className="text-container">
                     <h2>About Me</h2>
@@ -72,11 +72,39 @@ function Home(){
                     </p>
                 </div>
                 <div className="image-container">
-                    <img src={img} alt="profile"/>
+                    <img src={img} alt="profile" />
                 </div>
             </div>
+
+            <div className="skills-container">
+                <div className="skill-box">
+                    <h3>HTML</h3>
+                    <p>Proficient</p>
+                </div>
+                <div className="skill-box">
+                    <h3>CSS</h3>
+                    <p>Proficient</p>
+                </div>
+                <div className="skill-box">
+                    <h3>JavaScript</h3>
+                    <p>Proficient</p>
+                </div>
+                <div className="skill-box">
+                    <h3>React</h3>
+                    <p>Intermediate</p>
+                </div>
+                <div className="skill-box">
+                    <h3>Python</h3>
+                    <p>Intermediate</p>
+                </div>
+                <div className="skill-box">
+                    <h3>Java</h3>
+                    <p>Intermediate</p>
+                </div>
+            </div>
+            <br/><br/>
         </main>
-    )
+    );
 }
 
 export default App;

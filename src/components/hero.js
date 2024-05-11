@@ -1,4 +1,6 @@
 import img from '../resources/h_porp.jpg';
+import { Link } from 'react-router-dom'; // Import Link
+
 
 function Hero() {
     return (
@@ -8,10 +10,12 @@ function Hero() {
         >
             <div className='mask' style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
                 <div>
-                    <h1 className='mb-3 text-white'>Portfolio</h1>
-                    <a className='btn btn-outline-light btn-lg' href='#!' role='button'>
-                        ShowCV
-                    </a>
+                    <h1 className='mb-3 text-white'>My Portfolio</h1>
+                    <Link to="/cv">
+                        <a className='btn btn-outline-light btn-lg' role='button'>
+                            ShowCV
+                        </a>
+                    </Link>
                 </div>
             </div>
         </div>
