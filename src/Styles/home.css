@@ -1,0 +1,29 @@
+.about-container {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444; /* Ciemne tło kontenera */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(183, 26, 171, 0.5); /* Cień */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.text-container {
+    flex: 1; /* Text container zajmuje 50% szerokości */
+    text-align: left; /* Tekst po lewej stronie */
+    font-size: 18px;
+}
+
+.image-container {
+    flex: 1; /* Image container zajmuje 50% szerokości */
+    text-align: center; /* Obrazek po prawej stronie */
+}
+
+.image-container img {
+    max-width: 50%; /* Dostosuj wielkość zdjęcia według potrzeb */
+    height: auto;
+    border-radius: 50%; /* Zaokrąglenie krawędzi */
+}

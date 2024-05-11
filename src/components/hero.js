@@ -1,4 +1,4 @@
-import img from './h_porp.jpg';
+import img from '../resources/h_porp.jpg';
 
 function Hero() {
     return (
@@ -8,10 +8,9 @@ function Hero() {
         >
             <div className='mask' style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
                 <div>
-                    <h1 className='mb-3 text-white'>Heading</h1>
-                    <h4 className='mb-3 text-white'>Subheading</h4>
+                    <h1 className='mb-3 text-white'>Portfolio</h1>
                     <a className='btn btn-outline-light btn-lg' href='#!' role='button'>
-                        Call to action
+                        ShowCV
                     </a>
                 </div>
             </div>

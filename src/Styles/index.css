@@ -1,0 +1,26 @@
+body {
+    margin: 0 !important;
+    margin-top: 56px !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif !important;
+    background-color: #333 !important; /* Ciężkie ciemne tło */
+    color: #fff !important;
+    padding-bottom: 60px !important; /* Zapewnienie miejsca dla stopki */
+    min-height: 100vh !important;
+    position: relative !important; /* Ustawienie pozycji relative */
+}
+
+h2 {
+    color: #b71aab;
+    font-size: 35px;
+}
+
+.footer {
+    background-color: #222; /* Kolor tła stopki */
+    padding: 20px 0;
+    color: #fff; /* Kolor tekstu */
+    text-align: center;
+    position: fixed; /* Ustawienie pozycji na fixed */
+    bottom: 0; /* Ustawienie stopki na dole strony */
+    width: 100%; /* Szerokość stopki na całą szerokość strony */
+}
