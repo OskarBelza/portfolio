@@ -1,14 +1,16 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from "react-bootstrap/Button";
-import { Link } from 'react-router-dom'; // Import Link
+import Button from 'react-bootstrap/Button';
+import '../Styles/header.css'; // Import stylów
 
 function Header() {
     return (
         <Navbar bg="dark" expand="lg" variant="dark" className="fixed-top">
             <Container>
-                <Navbar.Brand as={Link} to="/" style={{color: '#b71aab'}}>Portfolio</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" className="brand">Portfolio</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -18,10 +20,10 @@ function Header() {
                         <Nav.Link as={Link} to="/cv">Cv</Nav.Link>
                     </Nav>
                     <Link to="/login">
-                        <Button variant="outline-info" style={{ marginRight: '10px', color: '#b71aab', borderColor: '#b71aab'}}>Sign In</Button>
+                        <Button variant="outline-info" className="sign-in">Sign In</Button>
                     </Link>
                     <Link to="/register">
-                        <Button variant="info" style={{ backgroundColor: '#b71aab', borderColor: '#b71aab', color: 'rgba(255,255,255,0.78)' }}>Sign Up</Button>
+                        <Button variant="info" className="sign-up">Sign Up</Button>
                     </Link>
                 </Navbar.Collapse>
             </Container>

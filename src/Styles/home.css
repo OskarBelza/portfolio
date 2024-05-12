@@ -2,9 +2,9 @@
     max-width: 55%;
     margin: 50px auto;
     padding: 20px;
-    background-color: #444; /* Ciemne tło kontenera */
+    background-color: #444;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(183, 26, 171, 0.5); /* Cień */
+    box-shadow: 0 0 20px rgba(183, 26, 171, 0.5);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -12,21 +12,21 @@
 }
 
 .text-container {
-    flex: 1; /* Text container zajmuje 50% szerokości */
-    text-align: left; /* Tekst po lewej stronie */
+    flex: 1;
+    text-align: left;
     font-size: 18px;
     line-height: 1.8;
 }
 
 .image-container {
-    flex: 1; /* Image container zajmuje 50% szerokości */
-    text-align: center; /* Obrazek po prawej stronie */
+    flex: 1;
+    text-align: center;
 }
 
 .image-container img {
-    max-width: 70%; /* Dostosuj wielkość zdjęcia według potrzeb */
+    max-width: 100%;
     height: auto;
-    border-radius: 50%; /* Zaokrąglenie krawędzi */
+    border-radius: 50%;
 }
 
 .skills-container {
@@ -83,13 +83,13 @@ progress {
 
 progress::-webkit-progress-value {
     background-color: #b71aab;
-    border-radius: 10px; /* Stylizujemy wypełnienie */
+    border-radius: 10px;
 }
 
 span {
     position: absolute;
     top: 50%;
-    right: 5px; /* Odległość od prawej krawędzi */
+    right: 5px;
     transform: translateY(-50%);
     color: white;
 }

@@ -1,0 +1,27 @@
+.sign-in:hover {
+    background-color: #b71aab;
+    color: white;
+    border-color: #b71aab;
+}
+
+.sign-up:hover {
+    background-color: #222;
+    color: #b71aab;
+    border-color: #b71aab;
+}
+
+.brand {
+    color: #b71aab !important;
+}
+
+.sign-up {
+    background-color: #b71aab;
+    border-color: #b71aab;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.sign-in {
+    border-color: #b71aab;
+    color: #b71aab;
+    margin-right: 10px;
+}

@@ -10,3 +10,10 @@
     width: 50%;
     height: 100%;
 }
+
+@media (max-width: 768px) {
+    .pdf-embed {
+        width: 90%;
+        height: 100%;
+    }
+}

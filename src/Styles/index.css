@@ -3,11 +3,11 @@ body {
     margin-top: 56px !important;
     padding: 0 !important;
     font-family: Arial, sans-serif !important;
-    background-color: #333 !important; /* Ciężkie ciemne tło */
+    background-color: #333 !important;
     color: #fff !important;
-    padding-bottom: 60px !important; /* Zapewnienie miejsca dla stopki */
+    padding-bottom: 60px !important;
     min-height: 100vh !important;
-    position: relative !important; /* Ustawienie pozycji relative */
+    position: relative !important;
 }
 
 h2 {
@@ -16,13 +16,13 @@ h2 {
 }
 
 .footer {
-    background-color: #222; /* Kolor tła stopki */
+    background-color: #222;
     padding: 20px 0;
-    color: #fff; /* Kolor tekstu */
+    color: #fff;
     text-align: center;
-    position: fixed; /* Ustawienie pozycji na fixed */
-    bottom: 0; /* Ustawienie stopki na dole strony */
-    width: 100%; /* Szerokość stopki na całą szerokość strony */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .social-icons a {
