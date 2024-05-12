@@ -1,5 +1,5 @@
 .about-container {
-    max-width: 80%;
+    max-width: 55%;
     margin: 50px auto;
     padding: 20px;
     background-color: #444; /* Ciemne tło kontenera */
@@ -24,7 +24,7 @@
 }
 
 .image-container img {
-    max-width: 50%; /* Dostosuj wielkość zdjęcia według potrzeb */
+    max-width: 70%; /* Dostosuj wielkość zdjęcia według potrzeb */
     height: auto;
     border-radius: 50%; /* Zaokrąglenie krawędzi */
 }
@@ -33,17 +33,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 55%;
     margin: 0 auto;
 }
 
 .skill-box {
-    flex: 0 1 calc(50% - 10px);
-    margin-bottom: 20px;
+    flex: 0 1 calc(50% - 20px);
+    margin-bottom: 30px;
     padding: 20px;
     background-color: #444;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(183, 26, 171, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
 }
 
 .skill-box h3 {
@@ -52,4 +57,61 @@
 
 .skill-box p {
     margin-bottom: 0;
+}
+
+.skill-box img {
+    max-width: 60%;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+progress {
+    appearance: none;
+    width: 100%;
+    height: 80%;
+    background-color: #b71aab;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+progress::-webkit-progress-value {
+    background-color: #b71aab;
+    border-radius: 10px; /* Stylizujemy wypełnienie */
+}
+
+span {
+    position: absolute;
+    top: 50%;
+    right: 5px; /* Odległość od prawej krawędzi */
+    transform: translateY(-50%);
+    color: white;
+}
+
+@media (max-width: 1500px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        max-width: 90%;
+        flex-direction: column;
+    }
+
+    .skills-container {
+        max-width: 90%;
+        flex-direction: column;
+    }
 }

@@ -11,22 +11,28 @@ import ContactPage from "./ContactPage";
 import CVPage from "./CVPage";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
+import python from "../resources/Python.webp"
+import java from "../resources/java.png"
+import flask from "../resources/flask.svg"
+import sklearn from "../resources/sklearn.png"
+import git from "../resources/git.png"
+import algorithm from "../resources/algorithm.png"
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <header className="App-header">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/projects" element={<ProjectPage />} />
-                        <Route path="/contact" element={<ContactPage />} />
-                        <Route path="/cv" element={<CVPage />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/register" element={<RegisterPage />} />
-                    </Routes>
                     <Header/>
                 </header>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<ProjectPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/cv" element={<CVPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                </Routes>
                 <Footer/>
             </div>
         </Router>
@@ -78,28 +84,120 @@ function Home() {
 
             <div className="skills-container">
                 <div className="skill-box">
-                    <h3>HTML</h3>
-                    <p>Proficient</p>
+                    <div className="text-container">
+                        <h3>Python</h3>
+                        <ul className="dot-list">
+                            <li>OOP</li>
+                            <li>ML Libraries</li>
+                            <li>Flask</li>
+                            <li>Tkinter</li>
+                            <li>Beautiful Soap</li>
+                        </ul>
+                        <div className="progress-bar">
+                            <progress value={80} max="100"></progress>
+                            <span>{80}%</span>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={python} alt="python"/>
+                    </div>
                 </div>
                 <div className="skill-box">
-                    <h3>CSS</h3>
-                    <p>Proficient</p>
+                    <div className="text-container">
+                        <h3>Object Programming</h3>
+                        <ul className="dot-list">
+                            <li>Java</li>
+                            <li>C#</li>
+                            <li>Abstraction</li>
+                            <li>Encapsulation</li>
+                            <li>Inheritance</li>
+                            <li>Polymorphism</li>
+                        </ul>
+                        <div className="progress-bar">
+                            <progress value={70} max="100"></progress>
+                            <span>{70}%</span>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={java} alt="java"/>
+                    </div>
                 </div>
                 <div className="skill-box">
-                    <h3>JavaScript</h3>
-                    <p>Proficient</p>
+                    <div className="text-container">
+                        <h3>Website Design</h3>
+                        <ul className="dot-list">
+                            <li>Flask</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                            <li>Bootstrap</li>
+                        </ul>
+                        <div className="progress-bar">
+                            <progress value={60} max="100"></progress>
+                            <span>{60}%</span>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={flask} alt="flask"/>
+                    </div>
                 </div>
                 <div className="skill-box">
-                    <h3>React</h3>
-                    <p>Intermediate</p>
+                    <div className="text-container">
+                        <h3>Machine Learning</h3>
+                        <ul className="dot-list">
+                            <li>Sklearn</li>
+                            <li>TenserFlow</li>
+                            <li>Classification</li>
+                            <li>Regression</li>
+                            <li>Neural Networks</li>
+                        </ul>
+                        <div className="progress-bar">
+                            <progress value={45} max="100"></progress>
+                            <span>{45}%</span>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={sklearn} alt="sklearn"/>
+                    </div>
                 </div>
                 <div className="skill-box">
-                    <h3>Python</h3>
-                    <p>Intermediate</p>
+                    <div className="text-container">
+                        <h3>Extra Skills</h3>
+                        <ul className="dot-list">
+                            <li>Git</li>
+                            <li>Docker</li>
+                            <li>Agile Programming</li>
+                            <li>Star UML</li>
+                            <li>SQL</li>
+                        </ul>
+                        <div className="progress-bar">
+                            <progress value={50} max="100"></progress>
+                            <span>{50}%</span>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={git} alt="git"/>
+                    </div>
                 </div>
                 <div className="skill-box">
-                    <h3>Java</h3>
-                    <p>Intermediate</p>
+                    <div className="text-container">
+                        <h3>Algorithms</h3>
+                        <ul className="dot-list">
+                            <li>Sort Algorithms</li>
+                            <li>Data Structures</li>
+                            <li>Greedy Programming</li>
+                            <li>Divide and Conquer</li>
+                            <li>Genetic Algorithms</li>
+                        </ul>
+                        <div className="progress-bar">
+                            <progress value={65} max="100"></progress>
+                            <span>{65}%</span>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <img src={algorithm} alt="alogorithm"/>
+                    </div>
                 </div>
             </div>
             <br/><br/>

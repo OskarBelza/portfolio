@@ -57,3 +57,11 @@
 .auth-container p a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .auth-container {
+        max-width: 90%;
+        flex-direction: column;
+    }
+
+}

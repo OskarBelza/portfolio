@@ -52,3 +52,9 @@
 .form-container button:hover {
     background-color: #8542a7;
 }
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+    }
+}
