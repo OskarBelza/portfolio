@@ -32,3 +32,14 @@
     background-color: #b71aab !important;
     border-color: #b71aab !important;
 }
+
+.profile-icon {
+    color: #b71aab;
+    font-size: 2rem;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.profile-icon:hover {
+    color: #fff;
+}

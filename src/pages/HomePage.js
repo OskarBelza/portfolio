@@ -1,3 +1,7 @@
+import React, { useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Hero from "../components/hero";
 import img from "../resources/avatar.png";
 import python from "../resources/Python.webp";
@@ -6,14 +10,22 @@ import flask from "../resources/flask.svg";
 import sklearn from "../resources/sklearn.png";
 import git from "../resources/git.png";
 import algorithm from "../resources/algorithm.png";
-import React from "react";
 
 function HomePage() {
+    const { isLoggedIn } = useAuth();
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            toast.success("You are logged in!");
+        }
+    }, [isLoggedIn]);
+
     return (
         <main>
             <Hero />
             <div className="about-container">
                 <div className="text-container">
+                    <ToastContainer />
                     <h2>About Me</h2>
                     <p>Hey, my name is Oskar and I am a student at the University of Economics in Katowice.
                         I am currently studying a major in computer science with a specialisation in programming

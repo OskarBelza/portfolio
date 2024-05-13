@@ -1,14 +1,20 @@
 // client/src/components/LoginPage.js
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import '../styles/auth.css';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from '../context/AuthContext';
 
-const LoginPage = ({ setIsLoggedIn }) => {
+
+const LoginPage = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
+    const { setIsLoggedIn } = useAuth(); // Tutaj korzystamy z useAuth, aby uzyskać setIsLoggedIn
+    const location = useLocation();
+    const showToast = location.state && location.state.showToast;
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,9 +28,11 @@ const LoginPage = ({ setIsLoggedIn }) => {
                 email: formData.email,
                 password: formData.password
             });
+            console.log(response)
             if (response.status === 200) {
                 toast.success("Login successful. Welcome back!");
-                //setIsLoggedIn(true);
+                setIsLoggedIn(true); // Tutaj zmieniłem setLogedIn na setIsLoggedIn
+                navigate("/");
             } else {
                 toast.error(response.data.message);
             }
@@ -32,6 +40,12 @@ const LoginPage = ({ setIsLoggedIn }) => {
             toast.error('Login failed: Incorrect email or password');
         }
     };
+
+    useEffect(() => {
+        if (showToast) {
+            toast.error("Please log in to access this page");
+        }
+    }, [showToast]);
 
     return (
         <div className="auth-container">
