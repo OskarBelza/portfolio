@@ -61,6 +61,7 @@ function HomePage() {
                             <li>Flask</li>
                             <li>Tkinter</li>
                             <li>Beautiful Soap</li>
+                            <li>Matplotlib</li>
                         </ul>
                         <div className="progress-bar">
                             <progress value={80} max="100"></progress>
@@ -120,6 +121,7 @@ function HomePage() {
                             <li>Classification</li>
                             <li>Regression</li>
                             <li>Neural Networks</li>
+                            <li>Image processing</li>
                         </ul>
                         <div className="progress-bar">
                             <progress value={45} max="100"></progress>

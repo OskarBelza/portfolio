@@ -1,19 +1,27 @@
+// RegisterPage.js
+
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom'; // Zmiana importów
-import '../Styles/auth.css';
+import { Link } from 'react-router-dom';
+import '../styles/auth.css';
+import axios from 'axios';
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+    const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({ ...prevState, [name]: value }));
+        setFormData((prevState) => ({ ...prevState, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Tutaj dodaj logikę rejestracji
-        console.log('Form Data:', formData);
+        try {
+            const response = await axios.post('http://localhost:5000/register', formData);
+            setMessage(response.data.message);
+        } catch (error) {
+            setMessage(error.response.data.message);
+        }
     };
 
     return (
@@ -34,6 +42,7 @@ const RegisterPage = () => {
                 </div>
                 <button type="submit">Register</button>
             </form>
+            {message && <p>{message}</p>}
             <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
     );

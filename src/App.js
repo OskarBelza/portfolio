@@ -1,15 +1,16 @@
-import '../Styles/home.css';
+import './styles/home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "./components/header";
+import Footer from "./components/footer";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProjectPage from "./ProjectPage";
-import ContactPage from "./ContactPage";
-import CVPage from "./CVPage";
-import LoginPage from "./LoginPage";
-import RegisterPage from "./RegisterPage";
-import HomePage from "./HomePage"
+import ProjectPage from "./pages/ProjectPage";
+import ContactPage from "./pages/ContactPage";
+import CVPage from "./pages/CVPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import HomePage from "./pages/HomePage"
+
 
 
 function App() {

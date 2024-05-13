@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/project.css';
+import '../styles/project.css';
 import nasa from '../resources/nasa.png'
 import chess from '../resources/chess.png'
 import computers from '../resources/computers.png'

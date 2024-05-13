@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
-import '../Styles/header.css'; // Import stylów
+import '../styles/header.css'; // Import stylów
 
 function Header() {
     return (
