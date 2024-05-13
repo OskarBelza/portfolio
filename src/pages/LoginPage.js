@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/auth.css';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = ({ setIsLoggedIn }) => {
     const [formData, setFormData] = useState({ email: '', password: '' });
-    const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,10 +22,14 @@ const LoginPage = ({ setIsLoggedIn }) => {
                 email: formData.email,
                 password: formData.password
             });
-            setMessage(response.data.message);
-            //setIsLoggedIn(true);
+            if (response.status === 200) {
+                toast.success("Login successful. Welcome back!");
+                //setIsLoggedIn(true);
+            } else {
+                toast.error(response.data.message);
+            }
         } catch (error) {
-            setMessage(error.response.data.message);
+            toast.error('Login failed: Incorrect email or password');
         }
     };
 
@@ -42,7 +47,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
                 </div>
                 <button type="submit">Login</button>
             </form>
-            {message && <p>{message}</p>}
+            <ToastContainer />
             <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </div>
     );
