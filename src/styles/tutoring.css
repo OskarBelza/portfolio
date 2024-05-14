@@ -1,0 +1,58 @@
+.tutoring-container {
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(183, 26, 171, 0.5);
+    color: #fff;
+    text-align: center;
+}
+
+.tutoring-container h1 {
+    margin-bottom: 20px;
+    color: #b71aab;
+}
+
+.tutoring-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tutoring-container label {
+    margin-bottom: 5px;
+}
+
+.tutoring-container input,
+.tutoring-container textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #b71aab;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #444;
+    width: 100%;
+    max-width: 400px;
+}
+
+.tutoring-container button {
+    padding: 10px 20px;
+    background-color: #b71aab;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+}
+
+.tutoring-container button:hover {
+    background-color: #8542a7;
+}
+
+@media (max-width: 768px) {
+    .tutoring-container {
+        max-width: 90%;
+    }
+}

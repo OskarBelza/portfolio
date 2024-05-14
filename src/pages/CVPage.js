@@ -1,6 +1,6 @@
 import React from 'react';
 import cvTemplate from '../resources/cv-template.pdf';
-import "../Styles/cv.css"
+import "../styles/cv.css"
 
 const PortfolioPage = () => (
     <div className="pdf-container">

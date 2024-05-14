@@ -1,8 +1,9 @@
 .sign-in:hover {
     background-color: #b71aab;
-    color: white;
     border-color: #b71aab;
+    color: white;
 }
+
 
 .sign-up:hover {
     background-color: #222;
@@ -24,4 +25,21 @@
     border-color: #b71aab;
     color: #b71aab;
     margin-right: 10px;
+}
+
+.sign-in:active,
+.sign-up:active {
+    background-color: #b71aab !important;
+    border-color: #b71aab !important;
+}
+
+.profile-icon {
+    color: #b71aab;
+    font-size: 2rem;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.profile-icon:hover {
+    color: #fff;
 }

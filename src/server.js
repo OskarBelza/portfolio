@@ -1,64 +1,80 @@
+
 // server.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const User = require('./models/User');
+const cors = require('cors');
+const bcrypt = require('bcryptjs');
 
 const app = express();
-const port = 5000;
 
-mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.log(err));
-
+// Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("Connected to MongoDB");
+});
+
+// User Model
+const UserSchema = new mongoose.Schema({
+    email: String,
+    name: String,
+    password: String
+});
+
+// Hashowanie hasła przed zapisaniem użytkownika do bazy danych
+UserSchema.pre('save', async function (next) {
+    const user = this;
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 10);
+    }
+    next();
+});
+
+const User = mongoose.model('User', UserSchema);
+
+// Registration
 app.post('/register', async (req, res) => {
+    const { email, name, password } = req.body;
     try {
-        const { name, email, password } = req.body;
-
-        let user = await User.findOne({ email });
-        if (user) {
-            return res.status(400).json({ msg: 'User already exists' });
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: 'Email already exists' });
         }
-
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
-        user = new User({ name, email, password: hashedPassword });
+        const user = new User({ email, name, password });
         await user.save();
-
-        res.json({ msg: 'User registered successfully' });
+        res.json({ message: 'Registration successful' });
     } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Server Error');
+        res.status(500).json({ message: 'Registration failed' });
     }
 });
 
+// Login
 app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
     try {
-        const { email, password } = req.body;
-
-        let user = await User.findOne({ email });
+        const user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).json({ msg: 'Invalid Credentials' });
+            return res.status(401).json({ message: 'Login failed: Incorrect email or password' });
         }
-
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ msg: 'Invalid Credentials' });
+            return res.status(401).json({ message: 'Login failed: Incorrect email or password' });
         }
-
-        // Here you can use JWT to send a token back to the client for authentication
-
-        res.json({ msg: 'Login successful' });
+        res.json({ message: 'Login successful' });
     } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Server Error');
+        res.status(500).json({ message: 'Login failed' });
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+// Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

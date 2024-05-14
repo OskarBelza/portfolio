@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../Styles/auth.css';
+import '../styles/auth.css';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -13,17 +16,14 @@ const RegisterPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-            const data = await response.json();
-            console.log(data);
+            const response = await axios.post('http://localhost:5000/register', formData);
+            if (response.status === 200) {
+                toast.success("Registration successful. Please login to continue.");
+            } else {
+                toast.error(response.data.message);
+            }
         } catch (error) {
-            console.error('Error:', error);
+            toast.error("Email already exists");
         }
     };
 
@@ -45,6 +45,7 @@ const RegisterPage = () => {
                 </div>
                 <button type="submit">Register</button>
             </form>
+            <ToastContainer />
             <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
     );
