@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom'; // Zmiana importów
+import { Link } from 'react-router-dom';
 import '../Styles/auth.css';
 
 const RegisterPage = () => {
@@ -10,10 +10,21 @@ const RegisterPage = () => {
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Tutaj dodaj logikę rejestracji
-        console.log('Form Data:', formData);
+        try {
+            const response = await fetch('http://localhost:5000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (
