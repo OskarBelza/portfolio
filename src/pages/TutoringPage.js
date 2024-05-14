@@ -14,21 +14,100 @@ function TutoringPage() {
         <div className="tutoring-container">
             <h1>Tutoring</h1>
             <p>Here you can sign up for tutoring sessions.</p>
-            <form>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" required/>
-
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" required/>
-
-                <label htmlFor="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required/>
-
-                <label htmlFor="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
+            <div className="schedule-container">
+                <div className="day-container">
+                    <div className="day-header">Monday</div>
+                    <hr className="divider" />
+                    <div className="time-slot">
+                        <div className="time">10:00 AM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">1:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                </div>
+                <div className="day-container">
+                    <div className="day-header">Tuesday</div>
+                    <hr className="divider" />
+                    <div className="time-slot">
+                        <div className="time">9:00 AM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">12:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">3:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                </div>
+                <div className="day-container">
+                    <div className="day-header">Wednesday</div>
+                    <hr className="divider" />
+                    <div className="time-slot">
+                        <div className="time">11:00 AM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">2:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">5:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                </div>
+                <div className="day-container">
+                    <div className="day-header">Thursday</div>
+                    <hr className="divider" />
+                    <div className="time-slot">
+                        <div className="time">10:00 AM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">1:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">4:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                </div>
+                <div className="day-container">
+                    <div className="day-header">Friday</div>
+                    <hr className="divider" />
+                    <div className="time-slot">
+                        <div className="time">9:00 AM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">12:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">3:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                </div>
+                <div className="day-container">
+                    <div className="day-header">Saturday</div>
+                    <hr className="divider" />
+                    <div className="time-slot">
+                        <div className="time">11:00 AM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">2:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                    <div className="time-slot">
+                        <div className="time">5:00 PM</div>
+                        <div className="reserve-button"><button>Reserve</button></div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

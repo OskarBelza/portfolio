@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import '../styles/contact.css'
+import emailjs from 'emailjs-com';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../styles/contact.css';
 
 function ContactPage() {
     const [formData, setFormData] = useState({
@@ -18,14 +21,38 @@ function ContactPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // tutaj możesz dodać logikę wysyłania formularza
-        console.log(formData);
-        // zerowanie formularza po wysłaniu
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
+
+        const emailData = {
+            service_id: process.env.REACT_APP_EMAIL_SERVICE_ID,
+            template_id: process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+            user_id: process.env.REACT_APP_EMAIL_USER_ID,
+            template_params: {
+                from_name: formData.name,
+                from_email: formData.email,
+                to_name: 'Your Name',
+                message: formData.message
+            }
+        };
+
+        emailjs.send(
+            emailData.service_id,
+            emailData.template_id,
+            emailData.template_params,
+            emailData.user_id
+        )
+            .then((response) => {
+                console.log('Email sent:', response);
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+                toast.success('Email sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+                toast.error('Error sending email. Please try again.');
+            });
     };
 
     return (
@@ -46,9 +73,9 @@ function ContactPage() {
                 </div>
                 <button type="submit">Send</button>
             </form>
+            <ToastContainer />
         </div>
     );
 }
 
 export default ContactPage;
-
