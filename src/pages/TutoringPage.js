@@ -17,12 +17,14 @@ function TutoringPage() {
                 const response = await axios.get('http://localhost:5000/tutoring');
                 setSchedule(response.data);
             } catch (error) {
-                console.error('Failed to fetch tutoring schedule:', error);
-                toast.error('Failed to fetch tutoring schedule');
+                if(isLoggedIn) {
+                    console.error('Failed to fetch tutoring schedule:', error);
+                    toast.error('Failed to fetch tutoring schedule');
+                }
             }
         };
         fetchSchedule();
-    }, []);
+    }, [isLoggedIn]);
 
     const handleReservation = async (dayIndex, timeIndex) => {
         try {
