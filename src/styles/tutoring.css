@@ -77,3 +77,9 @@
 .tutoring-container button:hover {
     background-color: #8542a7;
 }
+
+@media (max-width: 768px) {
+    .day-container {
+        flex-basis: 100%;
+    }
+}

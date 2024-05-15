@@ -1,5 +1,3 @@
-// client/src/components/LoginPage.js
-
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import '../styles/auth.css';
@@ -8,11 +6,10 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../context/AuthContext';
 
-
 const LoginPage = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const navigate = useNavigate();
-    const { setIsLoggedIn } = useAuth(); // Tutaj korzystamy z useAuth, aby uzyskać setIsLoggedIn
+    const { setIsLoggedIn, setUser } = useAuth(); // Dodane setUser do zapisywania użytkownika
     const location = useLocation();
     const showToast = location.state && location.state.showToast;
 
@@ -28,10 +25,10 @@ const LoginPage = () => {
                 email: formData.email,
                 password: formData.password
             });
-            console.log(response)
             if (response.status === 200) {
                 toast.success("Login successful. Welcome back!");
-                setIsLoggedIn(true); // Tutaj zmieniłem setLogedIn na setIsLoggedIn
+                setIsLoggedIn(true);
+                setUser(response.data.user); // Zapisujemy użytkownika w kontekście autoryzacji
                 navigate("/");
             } else {
                 toast.error(response.data.message);

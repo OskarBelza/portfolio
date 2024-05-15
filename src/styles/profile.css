@@ -1,3 +1,5 @@
+/* profile.css */
+
 .profile-container {
     max-width: 600px;
     margin: 120px auto;
@@ -9,13 +11,36 @@
     text-align: center;
 }
 
-.profile-container h1 {
+.welcome-container {
     margin-bottom: 20px;
+}
+
+.profile-container h1 {
     color: #b71aab;
 }
 
-.profile-container p {
+.bookings-container {
+    text-align: left;
     margin-bottom: 20px;
+}
+
+.booking-list {
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(183, 26, 171, 0.5);
+    color: #fff;
+}
+
+.booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.booking span {
+    font-weight: bold;
 }
 
 .profile-container button {
@@ -29,4 +54,12 @@
 
 .profile-container button:hover {
     background-color: #8542a7;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 90%;
+    }
 }

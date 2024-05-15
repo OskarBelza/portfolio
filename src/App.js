@@ -26,7 +26,6 @@ function App() {
                     </header>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/portfolio/" element={<HomePage />} />
                         <Route path="/projects" element={<ProjectPage />} />
                         <Route path="/contact" element={<ContactPage />} />
                         <Route path="/cv" element={<CVPage />} />
