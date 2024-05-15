@@ -52,17 +52,17 @@
 }
 
 .time {
-    flex: 1; /* Zmiana */
-    display: flex; /* Zmiana */
-    justify-content: center; /* Zmiana */
-    align-items: center; /* Zmiana */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reserve-button {
-    flex: 1; /* Zmiana */
-    display: flex; /* Zmiana */
-    justify-content: center; /* Zmiana */
-    align-items: center; /* Zmiana */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tutoring-container button {

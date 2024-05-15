@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { useAuth } from '../context/AuthContext';
 import { AiOutlineUser } from 'react-icons/ai';
-import '../styles/header.css'; // Import stylów
+import '../styles/header.css';
 
 function Header() {
     const { isLoggedIn } = useAuth();

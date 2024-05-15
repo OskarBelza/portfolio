@@ -1,5 +1,5 @@
 import img from '../resources/h_porp.jpg';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
 
 
 function Hero() {
