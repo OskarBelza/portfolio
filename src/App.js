@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/header";
 import Footer from "./components/footer";
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import ProjectPage from "./pages/ProjectPage";
 import ContactPage from "./pages/ContactPage";
 import CVPage from "./pages/CVPage";
@@ -25,6 +25,7 @@ function App() {
                         <Header />
                     </header>
                     <Routes>
+                        <Route path="/portfolio" element={<Navigate to="/" />} />
                         <Route path="/" element={<HomePage />} />
                         <Route path="/projects" element={<ProjectPage />} />
                         <Route path="/contact" element={<ContactPage />} />
