@@ -9,7 +9,7 @@ import { useAuth } from '../context/AuthContext';
 const LoginPage = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const navigate = useNavigate();
-    const { setIsLoggedIn, setUser } = useAuth(); // Dodane setUser do zapisywania użytkownika
+    const { setIsLoggedIn, setUser } = useAuth();
     const location = useLocation();
     const showToast = location.state && location.state.showToast;
 
@@ -28,7 +28,7 @@ const LoginPage = () => {
             if (response.status === 200) {
                 toast.success("Login successful. Welcome back!");
                 setIsLoggedIn(true);
-                setUser(response.data.user); // Zapisujemy użytkownika w kontekście autoryzacji
+                setUser(response.data.user);
                 navigate("/");
             } else {
                 toast.error(response.data.message);
