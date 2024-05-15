@@ -36,11 +36,14 @@ function TutoringPage() {
             }
             updatedSchedule[dayIndex].bookings.push({ time: selectedTime });
             setSchedule(updatedSchedule);
-            await axios.put('http://localhost:5000/tutoring', updatedSchedule); // Aktualizacja harmonogramu w bazie danych
-            await axios.post('http://localhost:5000/reserve', { userId: user._id, day: updatedSchedule[dayIndex].day, time: selectedTime }); // Dodanie rezerwacji do użytkownika
+            await axios.put('http://localhost:5000/tutoring', updatedSchedule);
+            await axios.post('http://localhost:5000/reserve', { userId: user._id, day: updatedSchedule[dayIndex].day, time: selectedTime });
+            toast.success('Meeting reserved successfully')
         } catch (error) {
-            console.error('Failed to update tutoring schedule:', error);
-            toast.error('Failed to update tutoring schedule');
+            if(isLoggedIn){
+                console.error('Failed to update tutoring schedule:', error);
+                toast.error('Failed to update tutoring schedule');
+            }
         }
     };
 
@@ -52,6 +55,7 @@ function TutoringPage() {
 
     return (
         <div className="tutoring-container">
+            <ToastContainer />
             <h1>Tutoring</h1>
             <p>Here you can sign up for tutoring sessions.</p>
             <div className="schedule-container">
@@ -74,7 +78,6 @@ function TutoringPage() {
                     </div>
                 ))}
             </div>
-            <ToastContainer />
         </div>
     );
 }

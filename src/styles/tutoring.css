@@ -65,7 +65,7 @@
     align-items: center;
 }
 
-.tutoring-container button {
+.schedule-container button {
     padding: 5px 10px;
     background-color: #b71aab;
     color: #fff;
@@ -74,7 +74,7 @@
     cursor: pointer;
 }
 
-.tutoring-container button:hover {
+.schedule-container button:hover {
     background-color: #8542a7;
 }
 

@@ -41,7 +41,7 @@
     font-weight: bold;
 }
 
-.profile-container button {
+.bookings-container button {
     padding: 10px 20px;
     background-color: #b71aab;
     color: #fff;
@@ -50,9 +50,23 @@
     cursor: pointer;
 }
 
-.profile-container button:hover {
+.bookings-container button:hover {
     background-color: #8542a7;
 }
+
+.button-container button{
+    padding: 10px 20px;
+    background-color: #b71aab;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #8542a7;
+}
+
 
 /* Media queries */
 

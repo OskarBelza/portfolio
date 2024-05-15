@@ -64,7 +64,9 @@ function ProfilePage() {
                     ))}
                 </div>
             </div>
-            <button onClick={handleLogout}>Logout</button>
+            <div className='button-container'>
+                <button onClick={handleLogout}>Logout</button>
+            </div>
             <ToastContainer/>
         </div>
     );
