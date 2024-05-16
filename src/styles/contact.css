@@ -36,7 +36,7 @@
     max-width: 400px;
 }
 
-.form-container button {
+.button-container button {
     padding: 10px 20px;
     background-color: #b71aab;
     color: #fff;
@@ -47,7 +47,7 @@
     max-width: 400px;
 }
 
-.form-container button:hover {
+.button-container button:hover {
     background-color: #8542a7;
 }
 
