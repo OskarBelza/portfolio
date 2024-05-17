@@ -1,0 +1,11 @@
+{
+  "register": "Register",
+  "name": "Name",
+  "password": "Password",
+  "signUp": "Register",
+  "account": "Already have an account? ",
+  "login": "Login here",
+  "registerSuccess": "Registration successful. Please login to continue",
+  "registerFail": "Registration Fail",
+  "emailExist": "Email already exists"
+}

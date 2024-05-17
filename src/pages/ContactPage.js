@@ -3,8 +3,12 @@ import emailjs from 'emailjs-com';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/contact.css';
+import { useTranslation } from 'react-i18next';
+
 
 function ContactPage() {
+    const { t } = useTranslation('contact');
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -57,10 +61,10 @@ function ContactPage() {
 
     return (
         <div className="form-container">
-            <h1>Contact Me</h1>
+            <h1>{t('contactMe')}</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">{t('name')}</label>
                     <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
                 </div>
                 <div>
@@ -68,11 +72,11 @@ function ContactPage() {
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
                 </div>
                 <div>
-                    <label htmlFor="message">Message</label>
+                    <label htmlFor="message">{t('message')}</label>
                     <textarea id="message" name="message" value={formData.message} onChange={handleChange}></textarea>
                 </div>
                 <div className="button-container">
-                    <button type="submit">Send</button>
+                    <button type="submit">{t('send')}</button>
                 </div>
             </form>
             <ToastContainer/>

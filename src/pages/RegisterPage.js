@@ -4,9 +4,11 @@ import '../styles/auth.css';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useTranslation} from "react-i18next";
 
 const RegisterPage = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+    const { t } = useTranslation('register');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,21 +20,21 @@ const RegisterPage = () => {
         try {
             const response = await axios.post('http://localhost:5000/register', formData);
             if (response.status === 200) {
-                toast.success("Registration successful. Please login to continue.");
+                toast.success(t('registerSuccess'));
             } else {
-                toast.error(response.data.message);
+                toast.error(t('registerFail'));
             }
         } catch (error) {
-            toast.error("Email already exists");
+            toast.error(t('emailExist'));
         }
     };
 
     return (
         <div className="auth-container">
-            <h2>Register</h2>
+            <h2>{t('register')}</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">{t('name')}</label>
                     <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
                 </div>
                 <div>
@@ -40,13 +42,13 @@ const RegisterPage = () => {
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">{t('password')}</label>
                     <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
                 </div>
-                <button type="submit">Register</button>
+                <button type="submit">{t('signUp')}</button>
             </form>
             <ToastContainer />
-            <p>Already have an account? <Link to="/login">Login here</Link></p>
+            <p>{t('account')}<Link to="/login">{t('login')}</Link></p>
         </div>
     );
 };

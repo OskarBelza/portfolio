@@ -5,11 +5,14 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../context/AuthContext';
 import "../styles/tutoring.css"
+import {useTranslation} from "react-i18next";
 
 function TutoringPage() {
     const { isLoggedIn, user } = useAuth();
     const [schedule, setSchedule] = useState([]);
     const navigate = useNavigate();
+    const { t } = useTranslation('tutoring');
+
 
     useEffect(() => {
         const fetchSchedule = async () => {
@@ -19,7 +22,7 @@ function TutoringPage() {
             } catch (error) {
                 if(isLoggedIn) {
                     console.error('Failed to fetch tutoring schedule:', error);
-                    toast.error('Failed to fetch tutoring schedule');
+                    toast.error(t('fetchFail'));
                 }
             }
         };
@@ -38,11 +41,11 @@ function TutoringPage() {
             setSchedule(updatedSchedule);
             await axios.put('http://localhost:5000/tutoring', updatedSchedule);
             await axios.post('http://localhost:5000/reserve', { userId: user._id, day: updatedSchedule[dayIndex].day, time: selectedTime });
-            toast.success('Meeting reserved successfully')
+            toast.success(t('bookingSuccess'))
         } catch (error) {
             if(isLoggedIn){
                 console.error('Failed to update tutoring schedule:', error);
-                toast.error('Failed to update tutoring schedule');
+                toast.error(t('bookingFail'));
             }
         }
     };
@@ -56,21 +59,21 @@ function TutoringPage() {
     return (
         <div className="tutoring-container">
             <ToastContainer />
-            <h1>Tutoring</h1>
-            <p>Here you can sign up for tutoring sessions.</p>
+            <h1>{t('tutoring')}</h1>
+            <p>{t('about')}</p>
             <div className="schedule-container">
                 {schedule.map((day, dayIndex) => (
                     <div className="day-container" key={dayIndex}>
-                        <div className="day-header">{day.day}</div>
+                        <div className="day-header">{t(`days.${day.day.toLowerCase()}`)}</div>
                         <hr className="divider" />
                         {day.times.map((time, timeIndex) => (
                             <div className="time-slot" key={timeIndex}>
                                 <div className="time">{time}</div>
                                 <div className="reserve-button">
                                     {day.bookings && day.bookings.find(booking => booking.time === time) ? (
-                                        <button disabled>Reserved</button>
+                                        <button disabled>{t('reserve')}</button>
                                     ) : (
-                                        <button onClick={() => handleReservation(dayIndex, timeIndex)}>Reserve</button>
+                                        <button onClick={() => handleReservation(dayIndex, timeIndex)}>{t('reserve')}</button>
                                     )}
                                 </div>
                             </div>

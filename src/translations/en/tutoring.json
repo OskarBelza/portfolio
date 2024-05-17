@@ -1,0 +1,17 @@
+{
+  "tutoring": "Tutoring",
+  "about": "Here you can sign up for tutoring sessions.",
+  "reserve": "Reserve",
+  "fetchFail": "Failed to fetch user bookings",
+  "bookingSuccess": "Meeting reserved successfully",
+  "bookingFail": "Failed to update tutoring schedule",
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  }
+}

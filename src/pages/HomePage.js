@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import 'react-toastify/dist/ReactToastify.css';
 import Hero from "../components/hero";
 import img from "../resources/avatar.png";
@@ -13,10 +14,11 @@ import algorithm from "../resources/algorithm.png";
 
 function HomePage() {
     const { isLoggedIn } = useAuth();
+    const { t } = useTranslation('home');
 
     useEffect(() => {
         if (isLoggedIn) {
-            toast.success("You are logged in!");
+            toast.success(t('login'));
         }
     }, [isLoggedIn]);
 
@@ -25,41 +27,12 @@ function HomePage() {
             <Hero />
             <div className="about-container">
                 <div className="text-container">
-                    <ToastContainer />
-                    <h2>About Me</h2>
-                    <p>Hey, my name is Oskar and I am a student at the University of Economics in Katowice.
-                        I am currently studying a major in computer science with a specialisation in programming
-                        and algorithms, and in the future I plan to focus mainly on the topics of machine
-                        learning,
-                        neural networks and image processing. In my free time, I develop hobbies such as board
-                        games,
-                        theatre or art, and I also like to deepen my knowledge in topics that particularly
-                        interest
-                        me,
-                        such as the aforementioned machine learning. I'm also very passionate about tea,
-                        especially
-                        Eastern tea and the traditional way of brewing it. I also enjoy reading, especially
-                        Sci-Fi
-                        and Fantasy, and when I have a free moment I like to play computer games, especially
-                        Baldur's Gate.
-                        In addition to this I work behind the bar at weekends which has allowed me to develop my
-                        soft
-                        skills and gain practical experience. If you would like to find out more about me, I
-                        invite
-                        you
-                        to explore this site and especially to take a look at the projects I have done so far,
-                        as
-                        well as
-                        my CV. In addition to this, on my site you can create an account which will enable you
-                        to
-                        sign
-                        up for tutoring with me, where I can share my knowledge with you and help you develop in
-                        areas
-                        such as mathematics or programming
-                    </p>
+                    <ToastContainer/>
+                    <h2>{t('aboutMe')}</h2>
+                    <p>{t('greeting')}</p>
                 </div>
                 <div className="image-container">
-                    <img src={img} alt="profile" />
+                <img src={img} alt="profile" />
                 </div>
             </div>
 
@@ -86,14 +59,14 @@ function HomePage() {
                 </div>
                 <div className="skill-box">
                     <div className="text-container">
-                        <h3>Object Programming</h3>
+                        <h3>{t('objectProgramming')}</h3>
                         <ul className="dot-list">
                             <li>Java</li>
                             <li>C#</li>
-                            <li>Abstraction</li>
-                            <li>Encapsulation</li>
-                            <li>Inheritance</li>
-                            <li>Polymorphism</li>
+                            <li>{t('abstraction')}</li>
+                            <li>{t('encapsulation')}</li>
+                            <li>{t('inheritance')}</li>
+                            <li>{t('polymorphism')}</li>
                         </ul>
                         <div className="progress-bar">
                             <progress value={70} max="100"></progress>
@@ -106,7 +79,7 @@ function HomePage() {
                 </div>
                 <div className="skill-box">
                     <div className="text-container">
-                        <h3>Website Design</h3>
+                        <h3>{t('websiteDesign')}</h3>
                         <ul className="dot-list">
                             <li>Flask</li>
                             <li>JavaScript</li>
@@ -126,14 +99,14 @@ function HomePage() {
                 </div>
                 <div className="skill-box">
                     <div className="text-container">
-                        <h3>Machine Learning</h3>
+                        <h3>{t('machineLearning')}</h3>
                         <ul className="dot-list">
                             <li>Sklearn</li>
                             <li>TenserFlow</li>
-                            <li>Classification</li>
-                            <li>Regression</li>
-                            <li>Neural Networks</li>
-                            <li>Image processing</li>
+                            <li>{t('classification')}</li>
+                            <li>{t('regression')}</li>
+                            <li>{t('neuralNetworks')}</li>
+                            <li>{t('imageProcessing')}</li>
                         </ul>
                         <div className="progress-bar">
                             <progress value={45} max="100"></progress>
@@ -146,11 +119,11 @@ function HomePage() {
                 </div>
                 <div className="skill-box">
                     <div className="text-container">
-                        <h3>Extra Skills</h3>
+                        <h3>{t('extraSkills')}</h3>
                         <ul className="dot-list">
                             <li>Git</li>
                             <li>Docker</li>
-                            <li>Agile Programming</li>
+                            <li>{t('agileProgramming')}</li>
                             <li>Star UML</li>
                             <li>SQL</li>
                         </ul>
@@ -165,12 +138,12 @@ function HomePage() {
                 </div>
                 <div className="skill-box">
                     <div className="text-container">
-                        <h3>Algorithms</h3>
+                        <h3>{t('algorithms')}</h3>
                         <ul className="dot-list">
-                            <li>Sort Algorithms</li>
-                            <li>Data Structures</li>
-                            <li>Greedy Programming</li>
-                            <li>Divide and Conquer</li>
+                            <li>{t('sortAlgorithms')}</li>
+                            <li>{t('dataStructures')}</li>
+                            <li>{t('greedyProgramming')}</li>
+                            <li>{t('divideAndConquer')}</li>
                             <li>Genetic Algorithms</li>
                         </ul>
                         <div className="progress-bar">

@@ -1,0 +1,19 @@
+{
+  "welcome": "Witaj, ",
+  "bookings": "Twoje rezerwacje:",
+  "cancel": "Anuluj",
+  "logout": "Wyloguj się",
+  "yourBookings": "Twoje rezerwacje",
+  "fetchFail": "Błąd w pobieraniu rezerwacji",
+  "bookingSuccess": "Rezerwacja anulowana pomyślnie",
+  "bookingFail": "Błąd w anulowaniu rezerwacji",
+  "days": {
+    "monday": "Poniedziałek",
+    "tuesday": "Wtorek",
+    "wednesday": "Środa",
+    "thursday": "Czwartek",
+    "friday": "Piątek",
+    "saturday": "Sobota",
+    "sunday": "Niedziela"
+  }
+}

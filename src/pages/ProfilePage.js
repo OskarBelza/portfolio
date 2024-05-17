@@ -5,11 +5,14 @@ import { useAuth } from '../context/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/profile.css';
+import {useTranslation} from "react-i18next";
 
 function ProfilePage() {
     const { isLoggedIn, user, setIsLoggedIn } = useAuth();
     const [bookings, setBookings] = useState([]);
     const navigate = useNavigate();
+    const { t } = useTranslation('profile');
+
 
     useEffect(() => {
         const fetchBookings = async () => {
@@ -18,7 +21,7 @@ function ProfilePage() {
                 setBookings(response.data.bookings);
             } catch (error) {
                 console.error('Failed to fetch user bookings:', error);
-                toast.error('Failed to fetch user bookings');
+                toast.error(t('fetchFail'));
             }
         };
         if (isLoggedIn && user) {
@@ -31,10 +34,10 @@ function ProfilePage() {
             await axios.put(`http://localhost:5000/cancel`, { userId: user._id, day, time });
             const updatedBookings = bookings.filter(booking => !(booking.day === day && booking.time === time));
             setBookings(updatedBookings);
-            toast.success('Booking canceled successfully');
+            toast.success(t('bookingSuccess'));
         } catch (error) {
             console.error('Failed to cancel booking:', error);
-            toast.error('Failed to cancel booking');
+            toast.error(t('bookingFail'));
         }
     };
 
@@ -50,22 +53,22 @@ function ProfilePage() {
     return (
         <div className="profile-container">
             <div className="welcome-container">
-                <h1>Welcome, {user.name}!</h1>
+                <h1>{t('welcome')}{user.name}!</h1>
             </div>
             <br/>
             <div className="bookings-container">
-                <h2>Your Bookings:</h2>
+                <h2>{t('yourBookings')}</h2>
                 <div className="booking-list">
                     {bookings.map((booking, index) => (
                         <div className="booking" key={index}>
-                            {booking.day} - {booking.time}
-                            <button onClick={() => handleCancel(booking.day, booking.time)}>Cancel</button>
+                            {t(`days.${booking.day.toLowerCase()}`)} - {booking.time}
+                            <button onClick={() => handleCancel(booking.day, booking.time)}>{t('cancel')}</button>
                         </div>
                     ))}
                 </div>
             </div>
             <div className='button-container'>
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogout}>{t('logout')}</button>
             </div>
             <ToastContainer/>
         </div>

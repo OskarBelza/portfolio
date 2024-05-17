@@ -1,0 +1,19 @@
+{
+  "welcome": "Welcome, ",
+  "bookings": "Your Bookings:",
+  "cancel": "Cancel",
+  "logout": "Logout",
+  "yourBookings": "Your Bookings",
+  "fetchFail": "Failed to fetch user bookings",
+  "bookingSuccess": "Booking canceled successfully",
+  "bookingFail": "Failed to cancel booking",
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  }
+}

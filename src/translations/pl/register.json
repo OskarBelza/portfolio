@@ -1,0 +1,11 @@
+{
+  "register": "Rejestracja",
+  "name": "Imię",
+  "password": "Hasło",
+  "signUp": "Zarejestruj się",
+  "account": "Posiadasz już konto? ",
+  "login": "Zaloguj się",
+  "registerSuccess": "Rejestracja poprawna, Zaloguj się",
+  "registerFail": "Rejestracja nie powiodła się",
+  "emailExist": "Email już istnieje"
+}

@@ -1,0 +1,11 @@
+{
+  "login": "Logowanie",
+  "password": "Hasło",
+  "signIn": "Zaloguj się",
+  "account": "Nie masz konta? ",
+  "register": "Zarejestruj się",
+  "emailExist": "Błąd Logowania: Zły email lub hasło",
+  "loginFail": "Błąd logowania",
+  "loginSuccess": "Logowanie pomyślne, WItaj spowrotem!",
+  "nonAuth": "Proszę zaloguj się żeby uzyskać dostęp"
+}

@@ -1,0 +1,17 @@
+{
+  "tutoring": "Korki",
+  "about": "Tutaj możesz umówić się na korki",
+  "reserve": "Zarezerwuj",
+  "fetchFail": "Błąd w pobieraniu rezerwacji",
+  "bookingSuccess": "Rezerwacja dokonana pomyślnie",
+  "bookingFail": "Błąd w dokonaniu rezerwacji",
+  "days": {
+    "monday": "Poniedziałek",
+    "tuesday": "Wtorek",
+    "wednesday": "Środa",
+    "thursday": "Czwartek",
+    "friday": "Piątek",
+    "saturday": "Sobota",
+    "sunday": "Niedziela"
+  }
+}
