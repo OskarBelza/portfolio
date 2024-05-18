@@ -11,8 +11,6 @@ import { useTranslation } from 'react-i18next';
 import enFlag from '../resources/eng.png';
 import plFlag from '../resources/pl.png';
 
-
-
 function Header() {
     const { i18n } = useTranslation();
     const { t } = useTranslation('header');
@@ -26,20 +24,8 @@ function Header() {
     return (
         <Navbar bg="dark" expand="lg" variant="dark" className="fixed-top">
             <Container>
-                <img
-                    src={enFlag}
-                    alt="English"
-                    onClick={() => changeLanguage('en')}
-                    style={{cursor: 'pointer', width: '30px', marginRight: '10px'}}
-                />
-                <img
-                    src={plFlag}
-                    alt="Polish"
-                    onClick={() => changeLanguage('pl')}
-                    style={{cursor: 'pointer', width: '30px'}}
-                />
                 <Navbar.Brand as={Link} to="/" className="brand">Portfolio</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/projects">{t('projects')}</Nav.Link>
@@ -49,7 +35,7 @@ function Header() {
                     </Nav>
                     {isLoggedIn ? (
                         <Link to="/profile">
-                            <AiOutlineUser className="profile-icon"/>
+                            <AiOutlineUser className="profile-icon" />
                         </Link>
                     ) : (
                         <div>
@@ -61,6 +47,20 @@ function Header() {
                             </Link>
                         </div>
                     )}
+                    <div className="flag-container">
+                        <img
+                            src={enFlag}
+                            alt="English"
+                            onClick={() => changeLanguage('en')}
+                            className="flag-icon"
+                        />
+                        <img
+                            src={plFlag}
+                            alt="Polish"
+                            onClick={() => changeLanguage('pl')}
+                            className="flag-icon"
+                        />
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

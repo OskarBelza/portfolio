@@ -4,7 +4,6 @@
     color: white;
 }
 
-
 .sign-up:hover {
     background-color: #222;
     color: #b71aab;
@@ -44,14 +43,36 @@
     color: #fff;
 }
 
-header img {
+.flag-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.flag-icon {
     cursor: pointer;
     width: 30px;
-    height: auto;
+    height: 30px;
     margin-right: 10px;
     transition: transform 0.2s;
 }
 
-header img:hover {
+.flag-icon:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .sign-in, .sign-up {
+        width: 30%;
+        margin: 0 auto 10px;
+    }
+
+    .flag-container {
+        justify-content: center;
+        margin-top: 20px;
+    }
 }
