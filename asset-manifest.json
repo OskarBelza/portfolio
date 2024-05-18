@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.cd4f63af.css",
-    "main.js": "/portfolio/static/js/main.921a6a48.js",
+    "main.css": "/portfolio/static/css/main.7029fd5d.css",
+    "main.js": "/portfolio/static/js/main.cd522640.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/nasa.png": "/portfolio/static/media/nasa.385ea7da47a359d531ce.png",
     "static/media/h_porp.jpg": "/portfolio/static/media/h_porp.a0bc19878e5d5bb1087e.jpg",
@@ -11,16 +11,18 @@
     "static/media/sklearn.png": "/portfolio/static/media/sklearn.7964d623ef0004496057.png",
     "static/media/testing.png": "/portfolio/static/media/testing.ab71fc780df9e9eb83e0.png",
     "static/media/algorithm.png": "/portfolio/static/media/algorithm.f9c83021bdc88d663b21.png",
+    "static/media/pl.png": "/portfolio/static/media/pl.84047e449230884cdc88.png",
     "static/media/java.png": "/portfolio/static/media/java.74aa4abd02c2b7164464.png",
+    "static/media/eng.png": "/portfolio/static/media/eng.f7c59189ffdf73358da5.png",
     "static/media/flask.svg": "/portfolio/static/media/flask.8656fecdd81b1a2b8e504787bd5ca745.svg",
     "static/media/Python.webp": "/portfolio/static/media/Python.ba0907f0f346321863ce.webp",
     "index.html": "/portfolio/index.html",
-    "main.cd4f63af.css.map": "/portfolio/static/css/main.cd4f63af.css.map",
-    "main.921a6a48.js.map": "/portfolio/static/js/main.921a6a48.js.map",
+    "main.7029fd5d.css.map": "/portfolio/static/css/main.7029fd5d.css.map",
+    "main.cd522640.js.map": "/portfolio/static/js/main.cd522640.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd4f63af.css",
-    "static/js/main.921a6a48.js"
+    "static/css/main.7029fd5d.css",
+    "static/js/main.cd522640.js"
   ]
 }
