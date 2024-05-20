@@ -7,5 +7,9 @@
   "login": "Zaloguj się",
   "registerSuccess": "Rejestracja poprawna, Zaloguj się",
   "registerFail": "Rejestracja nie powiodła się",
-  "emailExist": "Email już istnieje"
+  "emailExist": "Email już istnieje",
+  "confirmPassword": "Potwierdź Hasło",
+  "passwordMismatch": "Hasła są różne",
+  "passwordCriteria": "Hasło musi zawierać dużą literę, małą literę, znak specjalny i liczbę",
+  "showPassword": "Pokaż hasło"
 }

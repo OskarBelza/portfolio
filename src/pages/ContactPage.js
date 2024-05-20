@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../styles/contact.css';
 import { useTranslation } from 'react-i18next';
 
-
 function ContactPage() {
     const { t } = useTranslation('contact');
 
@@ -51,11 +50,11 @@ function ContactPage() {
                     email: '',
                     message: ''
                 });
-                toast.success('Email sent successfully!');
+                toast.success(t('emailSent'));
             })
             .catch((error) => {
                 console.error('Error sending email:', error);
-                toast.error('Error sending email. Please try again.');
+                toast.error(t('emailError'));
             });
     };
 
@@ -64,16 +63,33 @@ function ContactPage() {
             <h1>{t('contactMe')}</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">{t('name')}</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder={t('name')}
+                    />
                 </div>
                 <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder={t('Email')}
+                    />
                 </div>
                 <div>
-                    <label htmlFor="message">{t('message')}</label>
-                    <textarea id="message" name="message" value={formData.message} onChange={handleChange}></textarea>
+                    <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder={t('message')}
+                    ></textarea>
                 </div>
                 <div className="button-container">
                     <button type="submit">{t('send')}</button>

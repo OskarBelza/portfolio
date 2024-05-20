@@ -20,15 +20,28 @@ db.once('open', function () {
     console.log("Connected to MongoDB");
 });
 
+// Password validation function
+const validatePassword = (password) => {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%.*?&])[A-Za-z\d@$!.%*?&]{8,}$/;
+    return regex.test(password);
+};
+
 // Registration
 app.post('/register', async (req, res) => {
     const { email, name, password } = req.body;
+
+    if (!validatePassword(password)) {
+        return res.status(400).json({ message: 'Password does not meet criteria' });
+    }
+
     try {
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: 'Email already exists' });
         }
-        const user = new User({ email, name, password });
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = new User({ email, name, password: hashedPassword });
         await user.save();
         res.json({ message: 'Registration successful' });
     } catch (error) {

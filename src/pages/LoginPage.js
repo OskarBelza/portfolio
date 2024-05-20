@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import '../styles/auth.css';
+import '../styles/auth.css'; // Ensure this path is correct
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -50,12 +50,26 @@ const LoginPage = () => {
             <h2>{t('login')}</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                    <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email"
+                        required
+                    />
                 </div>
                 <div>
-                    <label htmlFor="password">{t('password')}</label>
-                    <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        placeholder={t('password')}
+                        required
+                    />
                 </div>
                 <button type="submit">{t('signIn')}</button>
             </form>

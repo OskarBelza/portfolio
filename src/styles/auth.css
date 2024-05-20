@@ -32,6 +32,8 @@
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 5px;
+    display: flex;
+    align-content: center;
 }
 
 .auth-container form button[type="submit"] {
@@ -56,6 +58,20 @@
 
 .auth-container p a:hover {
     text-decoration: underline;
+}
+
+.auth-container .show-password-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.auth-container .show-password-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.auth-container .show-password-container label {
+    margin-bottom: 0; /* Override the default margin-bottom for labels */
 }
 
 @media (max-width: 768px) {
