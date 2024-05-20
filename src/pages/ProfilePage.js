@@ -46,7 +46,7 @@ function ProfilePage() {
     };
 
     if (!isLoggedIn) {
-        navigate('/login', { state: { showToast: true } });
+        navigate('/login');
         return null;
     }
 

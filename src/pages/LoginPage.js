@@ -5,8 +5,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../context/AuthContext';
-import {useTranslation} from "react-i18next";
-
+import { useTranslation } from 'react-i18next';
 
 const LoginPage = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -15,7 +14,6 @@ const LoginPage = () => {
     const location = useLocation();
     const showToast = location.state && location.state.showToast;
     const { t } = useTranslation('login');
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,10 +28,9 @@ const LoginPage = () => {
                 password: formData.password
             });
             if (response.status === 200) {
-                toast.success(t('loginSuccess'));
                 setIsLoggedIn(true);
                 setUser(response.data.user);
-                navigate("/");
+                navigate("/", { state: { showLoginSuccess: true } });
             } else {
                 toast.error(t('loginFail'));
             }

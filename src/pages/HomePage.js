@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import Hero from "../components/hero";
 import img from "../resources/avatar.png";
@@ -15,12 +16,14 @@ import algorithm from "../resources/algorithm.png";
 function HomePage() {
     const { isLoggedIn } = useAuth();
     const { t } = useTranslation('home');
+    const location = useLocation();
 
     useEffect(() => {
-        if (isLoggedIn) {
+        if (location.state && location.state.showLoginSuccess) {
             toast.success(t('login'));
+            window.history.replaceState({}, document.title); // Clear state
         }
-    }, [isLoggedIn]);
+    }, [location, t]);
 
     return (
         <main>
@@ -32,7 +35,7 @@ function HomePage() {
                     <p>{t('greeting')}</p>
                 </div>
                 <div className="image-container">
-                <img src={img} alt="profile" />
+                    <img src={img} alt="profile" />
                 </div>
             </div>
 
@@ -144,7 +147,7 @@ function HomePage() {
                             <li>{t('dataStructures')}</li>
                             <li>{t('greedyProgramming')}</li>
                             <li>{t('divideAndConquer')}</li>
-                            <li>Genetic Algorithms</li>
+                            <li>{t('geneticAlgorithms')}</li>
                         </ul>
                         <div className="progress-bar">
                             <progress value={65} max="100"></progress>
@@ -152,7 +155,7 @@ function HomePage() {
                         </div>
                     </div>
                     <div className="image-container">
-                        <img src={algorithm} alt="alogorithm"/>
+                        <img src={algorithm} alt="algorithm"/>
                     </div>
                 </div>
             </div>
