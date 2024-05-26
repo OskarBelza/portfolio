@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.form-container h1 {
+.form-container h2 {
     margin-bottom: 20px;
     color: #b71aab;
 }
@@ -26,12 +26,13 @@
 .form-container input,
 .form-container textarea {
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border: 1px solid #b71aab;
     border-radius: 5px;
     background-color: #fff;
     color: #444;
     max-width: 100%;
+    width: 100%; /* This line ensures the input and textarea take full width */
 }
 
 .button-container button {
@@ -41,7 +42,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+    width: 100%; /* This line ensures the button takes full width */
     max-width: 400px;
 }
 

@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import Hero from "../components/hero";
@@ -12,11 +11,12 @@ import flask from "../resources/flask.svg";
 import sklearn from "../resources/sklearn.png";
 import git from "../resources/git.png";
 import algorithm from "../resources/algorithm.png";
+import '../styles/home.css'; // Ensure you have a stylesheet for custom styles
 
 function HomePage() {
-    const { isLoggedIn } = useAuth();
     const { t } = useTranslation('home');
     const location = useLocation();
+    const [isExpanded, setIsExpanded] = useState(false);
 
     useEffect(() => {
         if (location.state && location.state.showLoginSuccess) {
@@ -24,6 +24,10 @@ function HomePage() {
             window.history.replaceState({}, document.title); // Clear state
         }
     }, [location, t]);
+
+    const handleReadMore = () => {
+        setIsExpanded(!isExpanded);
+    };
 
     return (
         <main>
@@ -33,6 +37,14 @@ function HomePage() {
                     <ToastContainer/>
                     <h2>{t('aboutMe')}</h2>
                     <p>{t('greeting')}</p>
+                    {isExpanded && (
+                        <p className="extra-text">
+                            {t('greeting2')}
+                        </p>
+                    )}
+                    <button className="read-more" onClick={handleReadMore}>
+                        {isExpanded ? t('readLess') : t('readMore')}
+                    </button>
                 </div>
                 <div className="image-container">
                     <img src={img} alt="profile" />

@@ -22,7 +22,7 @@ db.once('open', function () {
 
 // Password validation function
 const validatePassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%.*?&])[A-Za-z\d@$!.%*?&]{8,}$/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!.%*?&])[A-Za-z\d@$!.%*?&]{8,}$/;
     return regex.test(password);
 };
 
@@ -39,9 +39,7 @@ app.post('/register', async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ message: 'Email already exists' });
         }
-
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ email, name, password: hashedPassword });
+        const user = new User({ email, name, password });
         await user.save();
         res.json({ message: 'Registration successful' });
     } catch (error) {

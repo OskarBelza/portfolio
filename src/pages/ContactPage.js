@@ -60,7 +60,7 @@ function ContactPage() {
 
     return (
         <div className="form-container">
-            <h1>{t('contactMe')}</h1>
+            <h2>{t('contactMe')}</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input

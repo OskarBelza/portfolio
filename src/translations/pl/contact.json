@@ -2,5 +2,7 @@
   "contactMe": "Skontaktuj się",
   "name": "Imię",
   "message": "Wiadomość",
-  "send": "Wyślij"
+  "send": "Wyślij",
+  "emailSent": "Email wysłany poprawnie",
+  "emailError": "Błąd w wysyłaniu Emaila"
 }

@@ -1,6 +1,7 @@
 {
   "aboutMe": "O mnie",
-  "greeting": "Cześć, nazywam się Oskar i jestem studentem Uniwersytetu Ekonomicznego w Katowicach. Aktualnie studiuję informatykę ze specjalizacją w programowaniu i algorytmach, a w przyszłości planuję skupić się głównie na tematach związanych z uczeniem maszynowym, sieciami neuronowymi i przetwarzaniem obrazu. W wolnym czasie rozwijam swoje hobby, takie jak gry planszowe, teatr czy sztuka, a także lubię pogłębiać wiedzę na tematy, które szczególnie mnie interesują, takie jak wspomniane wcześniej uczenie maszynowe. Jestem również wielkim pasjonatem herbaty, szczególnie herbaty wschodniej i tradycyjnych metod jej parzenia. Lubię także czytać, zwłaszcza Sci-Fi i Fantasy, a kiedy mam wolną chwilę, lubię grać w gry komputerowe, zwłaszcza w Baldur's Gate. Dodatkowo, pracuję w weekendy za barem, co pozwoliło mi rozwinąć umiejętności miękkie i zdobyć praktyczne doświadczenie. Jeśli chcesz dowiedzieć się o mnie więcej, zapraszam do zapoznania się z tą stroną, a szczególnie z projektami, które dotychczas zrealizowałem, oraz moim CV. Dodatkowo, na mojej stronie możesz założyć konto, które umożliwi Ci zapisanie się na korepetycje ze mną, gdzie mogę dzielić się swoją wiedzą i pomóc Ci rozwijać się w takich dziedzinach jak matematyka czy programowanie.",
+  "greeting": "Cześć, nazywam się Oskar i jestem studentem Uniwersytetu Ekonomicznego w Katowicach. Aktualnie studiuję informatykę ze specjalizacją w programowaniu i algorytmach, a w przyszłości planuję skupić się głównie na tematach związanych z uczeniem maszynowym, sieciami neuronowymi i przetwarzaniem obrazu. W wolnym czasie rozwijam swoje hobby, takie jak gry planszowe, teatr czy sztuka, a także lubię pogłębiać wiedzę na tematy, które szczególnie mnie interesują, takie jak wspomniane wcześniej uczenie maszynowe. Jestem również wielkim pasjonatem herbaty, szczególnie herbaty wschodniej i tradycyjnych metod jej parzenia. Lubię także czytać, zwłaszcza Sci-Fi i Fantasy, a kiedy mam wolną chwilę, lubię grać w gry komputerowe, zwłaszcza w Baldur's Gate. Dodatkowo, pracuję w weekendy za barem, co pozwoliło mi rozwinąć umiejętności miękkie i zdobyć praktyczne doświadczenie. ",
+  "greeting2": "Jeśli chcesz dowiedzieć się o mnie więcej, zapraszam do zapoznania się z tą stroną, a szczególnie z projektami, które dotychczas zrealizowałem, oraz moim CV. Dodatkowo, na mojej stronie możesz założyć konto, które umożliwi Ci zapisanie się na korepetycje ze mną, gdzie mogę dzielić się swoją wiedzą i pomóc Ci rozwijać się w takich dziedzinach jak matematyka czy programowanie.",
   "objectProgramming": "Programowanie objektowe",
   "abstraction": "Abstrakcja",
   "encapsulation": "Hermetyzacja",
@@ -20,5 +21,7 @@
   "greedyProgramming": "Programowanie zachłanne",
   "divideAndConquer": "Dziel i zwyciężaj",
   "geneticAlgorithms": "Algorytmy Genetyczne",
-  "login": "Jesteś zalogowany!"
+  "login": "Jesteś zalogowany!",
+  "readMore": "Czytaj więcej",
+  "readLess": "Czytaj mniej"
 }

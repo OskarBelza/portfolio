@@ -2,5 +2,7 @@
   "contactMe": "Contact Me",
   "name": "Name",
   "message": "Message",
-  "send": "Send"
+  "send": "Send",
+  "emailSent": "Email sent successfully",
+  "emailError": "Error sending email"
 }
