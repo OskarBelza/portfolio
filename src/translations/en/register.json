@@ -11,5 +11,6 @@
   "confirmPassword": "Confirm Password",
   "passwordMismatch": "Passwords are not the same",
   "passwordCriteria": "The password must contain an uppercase letter, a lowercase letter, a special character and a number",
-  "showPassword": "Show Password"
+  "showPassword": "Show Password",
+  "registerOff": "Register is currently not available"
 }

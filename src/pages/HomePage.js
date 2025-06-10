@@ -58,14 +58,14 @@ function HomePage() {
                         <ul className="dot-list">
                             <li>OOP</li>
                             <li>ML Libraries</li>
-                            <li>Flask</li>
+                            <li>Fastapi</li>
                             <li>Tkinter</li>
                             <li>Beautiful Soap</li>
-                            <li>Matplotlib</li>
+                            <li>OpenCV</li>
                         </ul>
                         <div className="progress-bar">
-                            <progress value={80} max="100"></progress>
-                            <span>{80}%</span>
+                            <progress value={70} max="100"></progress>
+                            <span>{70}%</span>
                         </div>
                     </div>
                     <div className="image-container">
@@ -84,8 +84,8 @@ function HomePage() {
                             <li>{t('polymorphism')}</li>
                         </ul>
                         <div className="progress-bar">
-                            <progress value={70} max="100"></progress>
-                            <span>{70}%</span>
+                            <progress value={60} max="100"></progress>
+                            <span>{60}%</span>
                         </div>
                     </div>
                     <div className="image-container">
@@ -96,7 +96,7 @@ function HomePage() {
                     <div className="text-container">
                         <h3>{t('websiteDesign')}</h3>
                         <ul className="dot-list">
-                            <li>Flask</li>
+                            <li>Fastapi</li>
                             <li>JavaScript</li>
                             <li>React</li>
                             <li>CSS</li>
@@ -117,15 +117,15 @@ function HomePage() {
                         <h3>{t('machineLearning')}</h3>
                         <ul className="dot-list">
                             <li>Sklearn</li>
-                            <li>TenserFlow</li>
+                            <li>TensorFlow</li>
                             <li>{t('classification')}</li>
                             <li>{t('regression')}</li>
                             <li>{t('neuralNetworks')}</li>
                             <li>{t('imageProcessing')}</li>
                         </ul>
                         <div className="progress-bar">
-                            <progress value={45} max="100"></progress>
-                            <span>{45}%</span>
+                            <progress value={65} max="100"></progress>
+                            <span>{65}%</span>
                         </div>
                     </div>
                     <div className="image-container">

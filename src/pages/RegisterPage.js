@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/auth.css'; // Ensure this path is correct
+import '../styles/auth.css';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,11 @@ const RegisterPage = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
     const [showPassword, setShowPassword] = useState(false);
     const { t } = useTranslation('register');
+
+    // Powiadomienie po wejściu na stronę
+    useEffect(() => {
+        toast.info(t('registerOff'));
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,6 +28,11 @@ const RegisterPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        toast.error(t('registerOff'));
+        return;
+
+        // Poniższy kod nie będzie wykonywany, dopóki rejestracja jest wyłączona:
+        /*
         const { name, email, password, confirmPassword } = formData;
 
         if (password !== confirmPassword) {
@@ -46,6 +56,7 @@ const RegisterPage = () => {
         } catch (error) {
             toast.error(t('emailExist'));
         }
+        */
     };
 
     const togglePasswordVisibility = () => {

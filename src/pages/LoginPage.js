@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import '../styles/auth.css'; // Ensure this path is correct
+import '../styles/auth.css';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,6 +22,11 @@ const LoginPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        toast.error(t('loginOff'));
+        return;
+
+        // poniższy kod nie zostanie wykonany dopóki funkcja logowania jest zablokowana:
+        /*
         try {
             const response = await axios.post('http://localhost:5000/login', {
                 email: formData.email,
@@ -37,12 +42,15 @@ const LoginPage = () => {
         } catch (error) {
             toast.error(t('emailExist'));
         }
+        */
     };
 
     useEffect(() => {
         if (showToast) {
             toast.error(t('nonAuth'));
         }
+
+        toast.info(t('loginOff'));
     }, [showToast]);
 
     return (

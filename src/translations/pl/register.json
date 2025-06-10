@@ -11,5 +11,6 @@
   "confirmPassword": "Potwierdź Hasło",
   "passwordMismatch": "Hasła są różne",
   "passwordCriteria": "Hasło musi zawierać dużą literę, małą literę, znak specjalny i liczbę",
-  "showPassword": "Pokaż hasło"
+  "showPassword": "Pokaż hasło",
+  "registerOff": "Rejestracja jest obecnie wyłączona"
 }

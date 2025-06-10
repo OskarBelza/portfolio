@@ -6,6 +6,8 @@ import computers from '../resources/computer.png'
 import dragon from '../resources/dragon.png'
 import fit from '../resources/fit.png'
 import charts from '../resources/charts.png'
+import omnioktagram from '../resources/omnioktagram.png'
+import confusion_matrix from '../resources/confusion_matrix_mm.png'
 import {useTranslation} from "react-i18next";
 
 function ProjectPage() {
@@ -107,10 +109,38 @@ function ProjectPage() {
                        className="project-button">{t('button')}</a>
                 </div>
             </div>
-    <br/>
-</div>
-)
-    ;
+
+            <div className="project-container">
+                <div className="project-image">
+                    <img src={omnioktagram} alt="Project 6"/>
+                </div>
+                <div className="project-text">
+                    <h2>{t('omniTitle')}</h2>
+                    <p>{t('omni')}
+                    </p>
+                    <br/><br/>
+                    <a href="https://oskarbelza.github.io/Omnioktagram/"
+                       className="project-button">{t('button')}</a>
+                </div>
+            </div>
+
+            <div className="project-container">
+                <div className="project-image">
+                    <img src={confusion_matrix} alt="Project 7"/>
+                </div>
+                <div className="project-text">
+                    <h2>{t('mmTitle')}</h2>
+                    <p>{t('mm')}
+                    </p>
+                    <br/><br/>
+                    <a href="https://github.com/OskarBelza/PracaDyplomowa"
+                       className="project-button">{t('button')}</a>
+                </div>
+            </div>
+            <br/>
+        </div>
+    )
+        ;
 }
 
 export default ProjectPage;

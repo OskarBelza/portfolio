@@ -7,5 +7,6 @@
   "emailExist": "Błąd Logowania: Zły email lub hasło",
   "loginFail": "Błąd logowania",
   "loginSuccess": "Logowanie pomyślne, WItaj spowrotem!",
-  "nonAuth": "Proszę zaloguj się żeby uzyskać dostęp"
+  "nonAuth": "Proszę zaloguj się żeby uzyskać dostęp",
+  "loginOff": "Logowanie jest obecnie wyłączona"
 }

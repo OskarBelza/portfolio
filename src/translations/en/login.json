@@ -7,5 +7,6 @@
   "emailExist": "Login failed: Incorrect email or password",
   "loginFail": "Login Fail",
   "loginSuccess": "Login successful. Welcome back!",
-  "nonAuth": "Please log in to access this page"
+  "nonAuth": "Please log in to access this page",
+  "loginOff": "Login is currently not available"
 }
